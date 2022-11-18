@@ -38,35 +38,9 @@
       defer
       src="/__/firebase/9.14.0/firebase-performance-compat.js"
     ></script>
-    <!-- 
-      initialize the SDK after all desired features are loaded, set useEmulator to false
-      to avoid connecting the SDK to running emulators.
-    -->
     <script defer src="/__/firebase/init.js?useEmulator=true"></script>
 
-    <script type="module">
-      // Import the functions you need from the SDKs you need
-      import { initializeApp } from "https://www.gstatic.com/firebasejs/9.14.0/firebase-app.js";
-      import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.14.0/firebase-analytics.js";
-      // TODO: Add SDKs for Firebase products that you want to use
-      // https://firebase.google.com/docs/web/setup#available-libraries
-
-      // Your web app's Firebase configuration
-      // For Firebase JS SDK v7.20.0 and later, measurementId is optional
-      const firebaseConfig = {
-        apiKey: "AIzaSyB-s-E1av-5AefeInoDIeSVTFfQk6JXtbc",
-        authDomain: "is-it-raining-nl.firebaseapp.com",
-        projectId: "is-it-raining-nl",
-        storageBucket: "is-it-raining-nl.appspot.com",
-        messagingSenderId: "637832374419",
-        appId: "1:637832374419:web:a92c374d2dedf77fc80566",
-        measurementId: "G-KWSL7G31WZ",
-      };
-
-      // Initialize Firebase
-      const app = initializeApp(firebaseConfig);
-      const analytics = getAnalytics(app);
-    </script>
+    <script defer type="module" src="/firebase.js"></script>
 
     <link
       rel="stylesheet"
@@ -74,16 +48,6 @@
       integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi"
       crossorigin="anonymous"
     />
-    <script
-      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.min.js"
-      integrity="sha384-IDwe1+LCz02ROU9k972gdyvl+AESN10+x7tBKgc9I5HFtuNz0wWnPclzo6p9vxnk"
-      crossorigin="anonymous"
-    ></script>
-    <script
-      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
-      integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3"
-      crossorigin="anonymous"
-    ></script>
 
     <script
       src="https://code.jquery.com/jquery-3.6.1.min.js"
@@ -91,94 +55,16 @@
       crossorigin="anonymous"
     ></script>
 
-    <style>
-      html,
-      body {
-        height: 100%;
-        background-size: cover;
-        background-repeat: no-repeat;
-        background-position: 50% 50%;
-      }
-
-      body {
-        display: flex;
-        align-items: center;
-        padding-top: 40px;
-        padding-bottom: 40px;
-        background-color: #f5f5f5;
-      }
-      .image {
-        font-size: 200px;
-      }
-      .yes-text {
-        font-size: 200px;
-        text-shadow: 2px 0 #fff, -2px 0 #fff, 0 2px #fff, 0 -2px #fff,
-          1px 1px #fff, -1px -1px #fff, 1px -1px #fff, -1px 1px #fff;
-      }
-    </style>
+    <link
+      rel="stylesheet" href="is-it-raining-nl.css"></style>
   </head>
+  
   <body class="text-center">
     <main class="w-50 m-auto">
       <h1 id="yes-text" class="image"></h1>
       <h1 class="yes-text font-weight-bold">Yes!</h1>
     </main>
 
-    <script>
-      document.addEventListener("DOMContentLoaded", function () {
-        var emojis = [
-          "🌧",
-          "🌦",
-          "🌂",
-          "💦",
-          "💧",
-          "😶‍🌫️",
-          "☁️",
-          "💨",
-          "⚡️",
-          "🌩",
-          "⛈",
-          "☔️",
-          "❄️",
-          "🌨",
-          "☃️",
-          "❅",
-          "⛄",
-        ];
-
-        var images = [
-          "134824.jpg",
-          "134828.jpg",
-          "134834.jpg",
-          "134843.jpg",
-          "134855.jpg",
-          "134856.jpg",
-          "134870.jpg",
-          "134878.jpg",
-          "134881.jpg",
-          "134889.jpg",
-          "134892.jpg",
-          "134919.jpg",
-          "134941.jpg",
-          "134949.jpg",
-          "134964.jpg",
-          "134969.jpg",
-          "134980.jpg",
-          "134986.jpg",
-          "134990.jpg",
-          "134994.jpg",
-        ];
-
-        document
-          .querySelector("#yes-text")
-          .append(emojis[Math.floor(Math.random() * emojis.length)]);
-
-        $("body").css({
-          "background-image":
-            "url(rainy_images/" +
-            images[Math.floor(Math.random() * images.length)] +
-            ")",
-        });
-      });
-    </script>
+    <script src="/is-it-raining-nl.js"></script>
   </body>
 </html>
