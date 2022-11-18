@@ -42,10 +42,11 @@ document.addEventListener("DOMContentLoaded", function () {
     "134994.jpg",
   ];
 
-  $("#yes-text")
-    .append(emojis[Math.floor(Math.random() * emojis.length)]);
+  $("#yes-text").append(emojis[Math.floor(Math.random() * emojis.length)]);
 
   $("body").css({
-    "background-image": `url(rainy_images/${images[Math.floor(Math.random() * images.length)]})`,
+    "background-image": `url(rainy_images/${
+      images[Math.floor(Math.random() * images.length)]
+    })`,
   });
 });
